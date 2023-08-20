@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/modelisk.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@12.3/dist/handsontable.full.min.js"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/handsontable@12.3/dist/handsontable.full.min.css" />
+    <script type="text/javascript" src="{% static 'js/grid_experience_analysis.js' %}"></script>
+    {% block script %}{% endblock %}
+</head>
+
+<body {% block onload%}{% endblock %}>
+    <div class="container-fluid">
+        <div class="sidebar-nav">
+            <nav>
+                <div><a href="{% url 'home' %}" class="nav-element"><span class="nav-span-element">
+                            Home
+                        </span></a></div>
+                <div><a href="#" class="nav-element"><span class="nav-span-element">
+                            Search
+                        </span></a></div>
+                <div><a href="#" class="nav-element"><span class="nav-span-element">
+                            Analysis
+                        </span></a></div>
+                <div><a href="{% url 'reference-data' %}" class="nav-element"><span class="nav-span-element">
+                            Reference data
+                        </span></a></div>
+                <div><a href="{% url 'business-data' %}" class="nav-element"><span class="nav-span-element">
+                            Business data
+                        </span></a></div>
+                <div><a href="#" class="nav-element"><span
+                            class="nav-span-element">
+                            New exposure analysis
+                        </span></a></div>
+                <div><a href="#" class="nav-element"><span
+                            class="nav-span-element">
+                            New experience analysis
+                        </span></a></div>
+                <div><a href="#" class="nav-element"><span class="nav-span-element">
+                            Help
+                        </span></a></div>
+            </nav>
+        </div>
+        <div class="col-sm-10">
+            <header>
+                <div class="header-content">The header</div>
+            </header>
+            <div class="main-area">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
