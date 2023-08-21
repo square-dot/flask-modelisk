@@ -3,7 +3,7 @@
 
 #Database
 *.sqlite3
-
+*.fs*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -97,8 +97,4 @@ ENV/
 
 # django migrations
 migrations/
-
-# database
-*.fs
-*.fs.*
 
