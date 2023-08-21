@@ -1,0 +1,23 @@
+--start new database called 'modelisk_db.fs'
+import ZODB, ZODB.FileStorage & ZODB.FileStorage('modelisk_db.fs')
+
+--start application in debug mode
+d: & cd git\flask-modelisk & .venv\Scripts\activate & flask --app modelisk run --debug
+
+
+--we set up a server according to the zeo.config file
+runzeo -C zeo.config
+
+--we can connect to it 
+>>> import ZEO 
+>>> client = ZEO.client(#port-specified-in-the-zeo.config-file)
+>>> import ZODB
+>>> db = ZODB.DB(client)
+>>> connection = db.open()
+>>> root = connection.root
+>>> root.test = 'test'
+>>> root.test
+'test'
+>>> import transaction
+>>> transaction.commit()
+>>> connection.close()

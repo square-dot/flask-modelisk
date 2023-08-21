@@ -1,7 +1,7 @@
 import datetime
 import random
 from reference_data import Country, Company, Currency, Classification, CodeGenerator
-from insurance_name_generator import test_insurance_data_generator
+from db_demo_data.insurance_name_generator import test_insurance_data_generator
 from insurance_program import Program
 import ZODB, ZODB.FileStorage
 import transaction

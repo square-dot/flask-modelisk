@@ -99,5 +99,6 @@ ENV/
 migrations/
 
 # database
-.fs
+*.fs
+*.fs.*
 
