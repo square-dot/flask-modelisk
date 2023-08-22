@@ -4,6 +4,9 @@ import ZODB, ZODB.FileStorage & ZODB.FileStorage('modelisk_db.fs')
 --start application in debug mode
 d: & cd git\flask-modelisk & .venv\Scripts\activate & flask --app modelisk run --debug
 
+--create a filesistem "mydata.fs" database with ZODB
+>>>import ZODB, ZODB.FileStorage
+>>> storage = ZODB.FileStorage.FileStorage('mydata.fs')
 
 --we set up a server according to the zeo.config file
 runzeo -C zeo.config
