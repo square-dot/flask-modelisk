@@ -1,6 +1,3 @@
---start new database called 'modelisk_db.fs'
-import ZODB, ZODB.FileStorage & ZODB.FileStorage('modelisk_db.fs')
-
 --start application in debug mode
 d: & cd git\flask-modelisk & .venv\Scripts\activate & flask --app modelisk run --debug
 
